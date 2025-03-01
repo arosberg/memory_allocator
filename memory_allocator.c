@@ -166,9 +166,9 @@ int main(int argc, char *argv[]) {
     // Enable memory and pid controllers in the parent cgroup
     enable_controllers(parent_cgroup_path, "+memory +pids");
 
-    // Create the child cgroup
+    // Create the child process cgroup
     char child_cgroup_path[PATH_MAX];
-    if (snprintf(child_cgroup_path, sizeof(child_cgroup_path), "%s/htcondor_subjob", parent_cgroup_path) > PATH_MAX) {
+    if (snprintf(child_cgroup_path, sizeof(child_cgroup_path), "%s/subjob", parent_cgroup_path) > PATH_MAX) {
         perror("Child cgroup path too long");
         exit(EXIT_FAILURE);
     }

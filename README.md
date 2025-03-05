@@ -40,8 +40,8 @@ This command:
 ## Implementation Details
 - Parses the current cgroup path from `/proc/self/cgroup`.
 - Moves the parent process to the controller cgroup.
-- Enables `memory` and `pids` controllers.
 - Creates a cgroup for the child process with a specified memory limit.
+- Enables `memory` and `pids` controllers for the child process cgroup.
 - Moves the child process to the new cgroup and enforces limits.
 - Waits for the child to terminate before the parent exits.
 
